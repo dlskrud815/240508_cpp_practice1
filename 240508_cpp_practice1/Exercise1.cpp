@@ -97,9 +97,10 @@ int main()
 				while (getline(read_file, line))
 				{
 					telVector.push_back(line);
+				}
 
-					//cout << "확인용: " << line << endl;
-
+				while (getline(read_file, line))
+				{
 					stringstream ss(line);
 					ss >> name >> tel;
 
@@ -107,12 +108,13 @@ int main()
 					{
 						// 전화 번호 값 변경
 						type = 1;
-
+						break;
 					}
 					else // 사용자 이름 존재 x
 					{
 						// 사용자 이름 전화번호 추가
 						type = 2;
+						break;
 					}
 				}
 			}
