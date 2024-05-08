@@ -94,27 +94,29 @@ int main()
 
 			if (read_file.is_open())
 			{
+				bool breakCheck = false;
+
 				while (getline(read_file, line))
 				{
 					telVector.push_back(line);
-				}
 
-				while (getline(read_file, line))
-				{
-					stringstream ss(line);
-					ss >> name >> tel;
+					if (breakCheck == false)
+					{
+						stringstream ss(line);
+						ss >> name >> tel;
 
-					if (name == name_input) // member_tel.txt 파일 내 로그인 한 사용자 이름 존재
-					{
-						// 전화 번호 값 변경
-						type = 1;
-						break;
-					}
-					else // 사용자 이름 존재 x
-					{
-						// 사용자 이름 전화번호 추가
-						type = 2;
-						break;
+						if (name == name_input) // member_tel.txt 파일 내 로그인 한 사용자 이름 존재
+						{
+							// 전화 번호 값 변경
+							type = 1;
+							breakCheck = true;
+						}
+						else // 사용자 이름 존재 x
+						{
+							// 사용자 이름 전화번호 추가
+							type = 2;
+							breakCheck = true;
+						}
 					}
 				}
 			}
