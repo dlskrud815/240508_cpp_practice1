@@ -98,7 +98,7 @@ int main()
 				{
 					telVector.push_back(line);
 
-					cout << "확인용: " << line << endl;
+					//cout << "확인용: " << line << endl;
 
 					stringstream ss(line);
 					ss >> name >> tel;
