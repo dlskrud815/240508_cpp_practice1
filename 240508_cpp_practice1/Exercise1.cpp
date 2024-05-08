@@ -14,7 +14,7 @@ int main()
 {
 	string line, name, pw, tel, name_input, pw_input, tel_input;
 	bool nameCheck, pwCheck;
-	vector <string> memberVector, telVector;
+	vector <string> memberVector;
 
 	cout << "* 로그인 성공 시 전화번호 저장 *" << endl
 		<< "( quit 입력 시 종료 )" << endl;
@@ -90,12 +90,12 @@ int main()
 
 			int type = 0;
 
-			if (!read_file.is_open())
+			vector <string> telVector;
+
+			if (read_file.is_open())
 			{
 				while (getline(read_file, line))
 				{
-					cout << "--- 확인용: " << line << endl;
-
 					telVector.push_back(line);
 
 					stringstream ss(line);
