@@ -89,13 +89,11 @@ int main()
 			ifstream read_file("member_tel.txt");
 
 			int type = 0;
-
+			bool breakCheck = false;
 			vector <string> telVector;
 
 			if (read_file.is_open())
 			{
-				bool breakCheck = false;
-
 				while (getline(read_file, line))
 				{
 					telVector.push_back(line);
@@ -115,7 +113,6 @@ int main()
 						{
 							// 사용자 이름 전화번호 추가
 							type = 2;
-							breakCheck = true;
 						}
 					}
 				}
