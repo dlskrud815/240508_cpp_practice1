@@ -98,6 +98,8 @@ int main()
 				{
 					telVector.push_back(line);
 
+					cout << "확인용: " << line << endl;
+
 					stringstream ss(line);
 					ss >> name >> tel;
 
@@ -105,14 +107,12 @@ int main()
 					{
 						// 전화 번호 값 변경
 						type = 1;
-						break;
 
 					}
 					else // 사용자 이름 존재 x
 					{
 						// 사용자 이름 전화번호 추가
 						type = 2;
-						break;
 					}
 				}
 			}
@@ -146,7 +146,7 @@ int main()
 
 			for (string line : telVector) // 파일에 입력
 			{
-				cout << line << endl;
+				//cout << line << endl;
 				tel_file << line << endl;
 			}
 
